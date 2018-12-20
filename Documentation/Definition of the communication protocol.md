@@ -8,7 +8,7 @@
 | Reset    | 3      |        |        |        |        |  |                              |
 | New Turn | 10     | Ax     | Ay     | Bx     | By     | Byte 2 + 3 => Startfield (A)<br />Byte 3 + 4 => Endfield (B) | [New Turn](#MC_NewTurn)                             |
 | Promotion Ack | 15 | [Figure](#Def_Figures) |  |  |  | Byte 2 = Figure to replace the pawn |  |
-| Error    | 255    |        |        |        |        |        |                              |
+| Error  | 127                       |        |        |        |        |        |                              |
 
 
 
