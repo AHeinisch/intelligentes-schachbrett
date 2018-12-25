@@ -2,13 +2,13 @@
 
 ### Microcontroller -> Server
 
-| Command  | Byte 1<br />(Controlbyte) | Byte 2 | Byte 3 | Byte 4 | Byte 5 | Description |                              |
-| -------- | ------ | ------ | ------ | ------ | ------ | ---------------------------- | ---------------------------- |
-| Start    | 1      | 0 / 1  |        |        |        | Byte 2 = 0 => PvP<br />Byte 2 = 1 => PvEngine | [Start](#MC_Start) |
-| Reset    | 3      |        |        |        |        |  |                              |
-| New Turn | 10     | Ax     | Ay     | Bx     | By     | Byte 2 + 3 => Startfield (A)<br />Byte 3 + 4 => Endfield (B) | [New Turn](#MC_NewTurn)                             |
-| Promotion Ack | 15 | [Figure](#Def_Figures) |  |  |  | Byte 2 = Figure to replace the pawn |  |
-| Error  | 127                       |        |        |        |        |        |                              |
+| Command  | Bit No. + Value | Byte 1<br />(Controlbyte) | Byte 2 | Byte 3 | Byte 4 | Byte 5 | Description |                              |
+| -------- | ------ | ------ | ------ | ------ | ------ | ---------------------------- | ---------------------------- | ---------------------------- |
+| Start    | Bit 8 = 1 | 00000001 | 0 / 1  |        |        |        | Byte 2 = 0 => PvP<br />Byte 2 = 1 => PvEngine | [Start](#MC_Start) |
+| Reset    | Bit 7 = 1 | 00000010 |        |        |        |        |  |                              |
+| New Turn | Bit 6 = 1 | 00000100 | Ax     | Ay     | Bx     | By     | Byte 2 + 3 => Startfield (A)<br />Byte 3 + 4 => Endfield (B) | [New Turn](#MC_NewTurn)                             |
+| Promotion Ack | Bit 5 = 1 | 00001000 | [Figure](#Def_Figures) |  |  |  | Byte 2 = Figure to replace the pawn |  |
+| Error  | Bit 1 = 1 | 10000000                |        |        |        |        |        |                              |
 
 
 
@@ -27,8 +27,8 @@
 
 | Case               | Byte 1 | Byte 2 | Byte 3 | Byte 4 | Byte 5 |
 | ------------------ | ------ | ------ | ------ | ------ | ------ |
-| Move from A1 to A2 | 10     | 0      | 0      | 0      | 1      |
-| Move from B8 to C8 | 10     | 1      | 7      | 2      | 7      |
+| Move from A1 to A2 | 4      | 0      | 0      | 0      | 1      |
+| Move from B8 to C8 | 4      | 1      | 7      | 2      | 7      |
 
 
 
@@ -36,16 +36,18 @@
 
 The server answers a command of the MC with a new command and an enclosed AI move (if the last player move was legal).
 
-| Command    | Byte 1 | Byte 2 | Byte 3 | Byte 4 | Byte 5 | AI moves enclosed | Example            |
-| ---------- | ------ | ------ | ------ | ------ | ------ | ----------------- | ------------------ |
-| OK         | 0      |        |        |        |        | X                 |  |
-| Castling   | 1      | RAx    | RAy    | RBx    | RBy    | X                 | [Castling](#Srv_Castling)                   |
-| En passant | 2      | Px     | Py     |        |        | X                 | [En passant](#Srv_EnPassant)                   |
-| Promotion  | 3      | Px     | Py     |        |        | X                 | [Promotion](#Srv_Promotion)                   |
-| Check      | 10     | Kx     | Ky     |        |        | X                 | [Check](#Srv_Check)                   |
-| Checkmate  | 20     | Kx     | Ky     |        |        |                   | [Checkmate](#Srv_Checkmate)                   |
-| Illegal    | 99     | Bx     | By     | Ax     | Ay     |                   | [Illegal](#Srv_Illegal) |
-| Error      | 255    |        |        |        |        |                   |                |
+The first byte of each command is a combination of all command bits.
+
+| Command    | Bit No. + Value | Byte 1 | Byte 2 | Byte 3 | Byte 4 | Byte 5 | AI moves enclosed | Example            |
+| ---------- | ------ | ------ | ------ | ------ | ------ | ----------------- | ------------------ | ------------------ |
+| OK         | Bit 2 = 0 | 00XXXXX0 |        |        |        |        | X                 |  |
+| Castling   | Bit 7 = 1 | 00XX0010 | RAx    | RAy    | RBx    | RBy    | X                 | [Castling](#Srv_Castling)                   |
+| En passant | Bit 6 = 1 | 00XX0100 | Px     | Py     |        |        | X                 | [En passant](#Srv_EnPassant)                   |
+| Promotion  | Bit 5 = 1 | 00XX1000 | Px     | Py     |        |        | X                 | [Promotion](#Srv_Promotion)                   |
+| Check    | Bit 4 = 1 | 0001XXX0 | Kx     | Ky     |        |        | X                 | [Check](#Srv_Check)                   |
+| Checkmate  | Bit 3 = 1 | 0010XXX0 | Kx     | Ky     |        |        |                   | [Checkmate](#Srv_Checkmate)                   |
+| Illegal    | Bit 2 = 1 | 01000000 | Bx     | By     | Ax     | Ay     |                   | [Illegal](#Srv_Illegal) |
+| Error      | Bit 1 = 1 | 10000000 |        |        |        |        |                   |                |
 
 
 
@@ -60,7 +62,7 @@ The server answers a command of the MC with a new command and an enclosed AI mov
     - (Wikimedia) [^1]
 
   - ```
-    1 7 0 5 0   + next AI move
+    2 7 0 5 0   + next AI move
     ```
 
 - Long castling white (King E1C1)
@@ -70,7 +72,7 @@ The server answers a command of the MC with a new command and an enclosed AI mov
     - (Wikimedia)[^2]
 
   - ```
-    1 0 0 3 0   + next AI move
+    2 0 0 3 0   + next AI move
     ```
 
 
@@ -84,7 +86,7 @@ The server answers a command of the MC with a new command and an enclosed AI mov
     - (Wikimedia) [^3]
 
   - ```
-    2 2 4   + next AI move
+    4 2 4   + next AI move
     ```
 
 
@@ -94,13 +96,13 @@ The server answers a command of the MC with a new command and an enclosed AI mov
 - Pawn A7A8 (becomes Queen)
 
   - ```
-    3 0 7   + next AI move
+    8 0 7   + next AI move
     ```
 
 - Pawn H2H1 (becomes Knight)
 
   - ```
-    3 7 0   + next AI move
+    8 7 0   + next AI move
     ```
 
 The server has to wait for a Promotion Ack-command by the MC after sending this.
@@ -112,7 +114,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 - Rook A2C2 (checks King C6)
 
   - ```
-    10 2 5   + next AI move
+    16 2 5   + next AI move
     ```
 
 
@@ -122,7 +124,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 - Queen D8H4 (checkmates King E1)
 
   - ```
-    20 4 0
+    32 4 0
     ```
 
 
@@ -132,7 +134,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 - Pawn A2A1 (which is an illegal move)
 
   - ```
-    99 0 0 0 1
+    64 0 0 0 1
     ```
 
 
