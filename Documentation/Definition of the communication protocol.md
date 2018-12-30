@@ -141,14 +141,14 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 #### AI moves
 
-| Command           | Byte 1 | Byte 2 | Byte 3 | Byte 4 | Byte 5 | Byte 6 | Byte 7 | Byte 8 | Byte 9 | Example                 |
-| ----------------- | ------ | -------- | -------- | -------- | -------- | ----------------------- | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-| OK (regular move) | 0      | Ax       | Ay       | Bx       | By       |        |        |        |        | [OK](#AI_OK) |
-| Castling          | 1      | KAx    | KAy    | KBx    | KBy    | RAx   | RAy   | RBx   | RBy   | [Castling](#AI_Castling)  |
-| En passant        | 2      | Ax     | Ay     | Bx | By | Px | Py     |        |          | [En passant](#AI_EnPassant)  |
-| Promotion         | 3      | Ax     | Ay     | Bx     | By | [Figure](#Def_Figures) |  |        |          | [Promotion](#AI_Promotion) |
-| Check             | 10     | Ax     | Ay     | Bx | By | Kx | Ky     |        |          | [Check](#AI_Check)  |
-| Checkmate         | 20     | Ax     | Ay     | Bx | By | Kx | Ky     |        |          | [Checkmate](#AI_Checkmate) |
+| Command           | Bit No + Value | Byte 1 | Byte 2 | Byte 3 | Byte 4 | Byte 5 | Byte 6 | Byte 7 | Byte 8 | Byte 9 | Example                 |
+| ----------------- | ------ | -------- | -------- | -------- | -------- | ----------------------- | ----------------------- | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
+| OK (regular move) | Bit 2 = 1 | 64    | Ax       | Ay       | Bx       | By       |        |        |        |        | [OK](#AI_OK) |
+| Castling          | Bit 7 = 1 | 2     | KAx    | KAy    | KBx    | KBy    | RAx   | RAy   | RBx   | RBy   | [Castling](#AI_Castling)  |
+| En passant        | Bit 6 = 1 | 4     | Ax     | Ay     | Bx | By | Px | Py     |        |          | [En passant](#AI_EnPassant)  |
+| Promotion         | Bit 5 = 1 | 8     | Ax     | Ay     | Bx     | By | [Figure](#Def_Figures) |  |        |          | [Promotion](#AI_Promotion) |
+| Check             | Bit 4 = 1    | 16    | Ax     | Ay     | Bx | By | Kx | Ky     |        |          | [Check](#AI_Check)  |
+| Checkmate         | Bit 3 = 1 | 32   | Ax     | Ay     | Bx | By | Kx | Ky     |        |          | [Checkmate](#AI_Checkmate) |
 
 
 
@@ -159,13 +159,13 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 - A1A2
 
   - ```
-    0 0 0 0 1
+    64 0 0 0 1
     ```
 
 - B8C8
 
   - ```
-    0 1 7 2 7
+    64 1 7 2 7
     ```
 
 
@@ -179,7 +179,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
     - (Wikimedia) [^1]
 
   - ```
-    1 4 0 6 0 7 0 5 0
+    2 4 0 6 0 7 0 5 0
     ```
 
 - Long castling white (King E1C1)
@@ -189,7 +189,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
     -   (Wikimedia)[^2]
 
   - ```
-    1 4 0 2 0 0 0 3 0
+    2 4 0 2 0 0 0 3 0
     ```
 
 
@@ -203,7 +203,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
     - (Wikimedia) [^3]
 
   - ```
-    2 3 5 2 6 2 4
+    4 3 5 2 6 2 4
     ```
 
 
@@ -213,13 +213,13 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 - Pawn A7A8 (becomes Queen)
 
   - ```
-    3 0 6 0 7 Q
+    8 0 6 0 7 Q
     ```
 
 - Pawn H2H1 (becomes Knight)
 
   - ```
-    3 7 1 7 0 N
+    8 7 1 7 0 N
     ```
 
 
@@ -229,7 +229,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 - Rook A2C2 (checks King C6)
 
   - ```
-    10 0 1 2 1 2 5
+    16 0 1 2 1 2 5
     ```
 
 
@@ -239,7 +239,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 - Queen D8H4 (checkmates King E1)
 
   - ```
-    20 3 7 7 3 4 0
+    32 3 7 7 3 4 0
     ```
 
 
