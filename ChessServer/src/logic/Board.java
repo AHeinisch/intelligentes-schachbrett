@@ -255,8 +255,8 @@ public class Board {
 		lastMove.setPromotion(figureCode);
 		setFigure(lastMove.getEndRow(), lastMove.getEndColumn(), color, figureCode);
 		if (whiteKingChecked()) {
-			retVal[1] = (byte) whiteKing.getColumn();
-			retVal[2] = (byte) whiteKing.getRow();
+			retVal[1] = (byte) lastMove.getEndColumn();
+			retVal[2] = (byte) lastMove.getEndRow();
 			if (whiteKingCheckmated()) {
 				retVal[0] = LogicConst.CHECKMATE;
 				return retVal;
