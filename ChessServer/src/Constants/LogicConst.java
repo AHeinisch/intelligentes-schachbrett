@@ -36,9 +36,9 @@ public class LogicConst {
 	public static final int ENGINE_TURN_LENGTH = 11;
 	
 	public static final byte ENGINE_OK = 64;
-	public static final byte ENGINE_CASTLING = 2;
-	public static final byte ENGINE_EN_PASSANT = 4;
-	public static final byte ENGINE_PROMOTION = 8;
-	public static final byte ENGINE_CHECK = 16;
-	public static final byte ENGINE_CHECKMATE = 32;
+	public static final byte ENGINE_CASTLING = 66;
+	public static final byte ENGINE_EN_PASSANT = 68;
+	public static final byte ENGINE_PROMOTION = 72;
+	public static final byte ENGINE_CHECK = 80;
+	public static final byte ENGINE_CHECKMATE = 96;
 }

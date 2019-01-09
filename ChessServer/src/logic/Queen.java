@@ -53,7 +53,7 @@ public class Queen extends Figure{
 		}
 		if(rowDiff == 0) {
 			int column = Math.min(move.getStartColumn(), move.getEndColumn()) + 1;
-			int maxColumn = Math.max(move.getStartColumn(),move.getEndColumn()) + 1;
+			int maxColumn = Math.max(move.getStartColumn(),move.getEndColumn());
 			while(column < maxColumn) {
 				if(field[move.getStartRow()][column].getFigure() != null) {
 					return LogicConst.ILLEGAL;
@@ -62,7 +62,7 @@ public class Queen extends Figure{
 			}
 		} else{
 			int row = Math.min(move.getStartRow(), move.getEndRow()) + 1;
-			int maxRow = Math.max(move.getStartRow(),move.getEndRow()) + 1;
+			int maxRow = Math.max(move.getStartRow(),move.getEndRow());
 			while(row < maxRow) {
 				if(field[row][move.getStartColumn()].getFigure() != null) {
 					return LogicConst.ILLEGAL;

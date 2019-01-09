@@ -17,7 +17,6 @@ public class Pawn extends Figure{
 		int rowStep = move.getEndRow() - move.getStartRow();
 		int columnDiff = Math.abs(move.getStartColumn() - move.getEndColumn());
 		Field endField = field[move.getEndRow()][move.getEndColumn()];
-		Field startField = field[move.getStartRow()][move.getStartColumn()];
 		
 		if((rowStep == stepDir && endField.getFigure() == null && columnDiff == 0)
 				|| (rowStep == stepDir && endField.getFigure() != null && endField.getFigure().isWhite() != white && columnDiff == 1)) {
@@ -31,7 +30,7 @@ public class Pawn extends Figure{
 				&& endField.getFigure() == null 
 				&& columnDiff == 0 
 				&& field[move.getStartRow() + stepDir][move.getEndColumn()].getFigure() == null 
-				&& startField.getFigure().moved == false) {
+				&& !moved) {
 			return LogicConst.OK;
 		}
 		

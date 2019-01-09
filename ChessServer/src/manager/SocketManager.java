@@ -33,8 +33,15 @@ public class SocketManager {
 		fileManager = new FileManager();
 	}
 
-
+	private void debugPrintByteArray(byte[] array) {
+		for(int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.print("\n");
+	}
+	
 	private void messageToClient(byte[] message) {
+		debugPrintByteArray(message);
 		try {
 			socketOut.write(message);
 			socketOut.flush();
@@ -113,7 +120,6 @@ public class SocketManager {
 	}
 	
 	public void processMessage(byte[] input) {
-		String engineTurn;
 		
 		switch(input[0]) {
 		case ServerConst.START:
@@ -148,6 +154,7 @@ public class SocketManager {
 			InputStream socketIn = clientSocket.getInputStream();
 			byte[] buffer = new byte[ServerConst.MAX_INPUT_LENGTH];
 			socketIn.read(buffer);
+			debugPrintByteArray(buffer);
 			processMessage(buffer);
 
 			System.err.println("Closing connection with client");
