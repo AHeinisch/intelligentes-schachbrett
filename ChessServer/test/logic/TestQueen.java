@@ -7,8 +7,8 @@ import org.junit.Test;
 
 import Constants.LogicConst;
 
-public class TestBishop {
-	
+public class TestQueen {
+
 	Field[][] field;
 	
 	@Before
@@ -23,72 +23,65 @@ public class TestBishop {
 	
 	@Test
 	public void testConstructor() {
-		Bishop bishop = new Bishop(true);
-		assertNotEquals(bishop, null);
+		Queen queen = new Queen(true);
+		assertNotNull(queen);
 	}
+	
 	
 	@Test
 	public void testLegalMoveWhithNormalMove() {
-		Bishop bishop = new Bishop(true);
-		field[4][5].setFigure(bishop);
+		Queen queen = new Queen(true);
+		field[4][5].setFigure(queen);
 		Move m = new Move(4,5,1,2);
-		assertEquals(LogicConst.OK, bishop.legalMove(m, field));
+		assertEquals(LogicConst.OK, queen.legalMove(m, field));
 	}
 	
 	@Test 
 	public void testLegalMoveToNextField() {
-		Bishop bishop = new Bishop(true);
-		field[4][5].setFigure(bishop);
+		Queen queen = new Queen(true);
+		field[4][5].setFigure(queen);
 		Move m = new Move(4,5,3,4);
-		assertEquals(LogicConst.OK, bishop.legalMove(m, field));
+		assertEquals(LogicConst.OK, queen.legalMove(m, field));
 	}
 	
 	@Test 
 	public void testLegalMoveTakes() {
-		Bishop bishop = new Bishop(true);
+		Queen queen = new Queen(true);
 		Pawn pawn = new Pawn(false);
-		field[4][5].setFigure(bishop);
+		field[4][5].setFigure(queen);
 		field[1][2].setFigure(pawn);
 		Move m = new Move(4,5,1,2);
-		assertEquals(LogicConst.OK, bishop.legalMove(m, field));
-	}
-	
-	@Test 
-	public void testLegalWhithNoneDiagonalMove() {
-		Bishop bishop = new Bishop(true);
-		field[4][5].setFigure(bishop);
-		Move m = new Move(4,5,1,3);
-		assertEquals(LogicConst.ILLEGAL, bishop.legalMove(m, field));
+		assertEquals(LogicConst.OK, queen.legalMove(m, field));
 	}
 	
 	@Test
 	public void testLegalMoveTryToTakeOwnFigure() {
-		Bishop bishop = new Bishop(true);
+		Queen queen = new Queen(true);
 		Pawn pawn = new Pawn(true);
-		field[4][5].setFigure(bishop);
+		field[4][5].setFigure(queen);
 		field[1][2].setFigure(pawn);
 		Move m = new Move(4,5,1,2);
-		assertEquals(LogicConst.ILLEGAL, bishop.legalMove(m, field));
+		assertEquals(LogicConst.ILLEGAL, queen.legalMove(m, field));
 	}
 	
 	@Test 
 	public void testLegalMoveWhithFigureInTheWay() {
-		Bishop bishop = new Bishop(true);
+		Queen queen = new Queen(true);
 		Pawn pawn = new Pawn(true);
-		field[4][5].setFigure(bishop);
+		field[4][5].setFigure(queen);
 		field[3][4].setFigure(pawn);
 		Move m = new Move(4,5,1,2);
-		assertEquals(LogicConst.ILLEGAL, bishop.legalMove(m, field));
+		assertEquals(LogicConst.ILLEGAL, queen.legalMove(m, field));
 	}
 	
 	@Test 
 	public void testLegalMoveWhithFigureOneStepBeforeTheEndField() {
-		Bishop bishop = new Bishop(true);
+		Queen queen = new Queen(true);
 		Pawn pawn = new Pawn(true);
-		field[4][5].setFigure(bishop);
+		field[4][5].setFigure(queen);
 		field[2][3].setFigure(pawn);
 		Move m = new Move(4,5,1,2);
-		assertEquals(LogicConst.ILLEGAL, bishop.legalMove(m, field));
+		assertEquals(LogicConst.ILLEGAL, queen.legalMove(m, field));
 	}
 
 }
