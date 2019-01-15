@@ -1,19 +1,18 @@
 package manager;
 
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
-
 import constants.EngineConst;
 import constants.LogicConst;
 import constants.ServerConst;
 import decoder.Decoder;
 import helper.Helper;
-import logic.Board;
-import logic.Move;
-
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import logic.Board;
+import logic.Move;
 
 /**
  * This class manages the connection between the Logic of the Server and the
