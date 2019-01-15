@@ -14,6 +14,8 @@ public class Board {
   private Position whiteKing;
   private Position blackKing;
   private Move lastMove;
+  
+  private Figure lastEndFieldFigure = null;
 
   private Field[][] field;
 
@@ -65,8 +67,10 @@ public class Board {
   public boolean checkGenerallConditions(Move move) {
     if (!(LogicConst.LOWEST_ROW <= move.getStartRow() && move.getStartRow() <= LogicConst.ROWS - 1
         && LogicConst.LOWEST_ROW <= move.getEndRow() && move.getEndRow() <= LogicConst.ROWS - 1
-        && LogicConst.LOWEST_COLUMN <= move.getStartColumn() && move.getEndColumn() <= LogicConst.COLUMS - 1
-        && LogicConst.LOWEST_COLUMN <= move.getEndColumn() && move.getEndColumn() <= LogicConst.COLUMS - 1)) {
+        && LogicConst.LOWEST_COLUMN <= move.getStartColumn() 
+        && move.getEndColumn() <= LogicConst.COLUMS - 1
+        && LogicConst.LOWEST_COLUMN <= move.getEndColumn() 
+        && move.getEndColumn() <= LogicConst.COLUMS - 1)) {
       return false;
     }
     if (field[move.getStartRow()][move.getStartColumn()].getFigure() == null) {
@@ -324,7 +328,7 @@ public class Board {
   }
 
   /**
-   * checks if the white King is checked.
+   * Checks if the white King is checked.
    * 
    * @return boolean true if the king is checked and otherwise false
    */
@@ -344,7 +348,7 @@ public class Board {
   }
 
   /**
-   * checks if the black King is checked.
+   * Checks if the black King is checked.
    * 
    * @return boolean true if the king is checked and otherwise false
    */
@@ -364,7 +368,7 @@ public class Board {
   }
 
   /**
-   * checks if the black King is check mated.
+   * Checks if the black King is check mated.
    * 
    * @return boolean true if the king is checked mated and otherwise false
    */
@@ -407,7 +411,7 @@ public class Board {
   }
 
   /**
-   * checks if the white King is check mated.
+   * Checks if the white King is check mated.
    * 
    * @return boolean true if the king is checked mated and otherwise false
    */
@@ -789,6 +793,7 @@ public class Board {
    */
   public void setMove(Move move) {
     Figure figure = field[move.getStartRow()][move.getStartColumn()].getFigure();
+    lastEndFieldFigure = field[move.getEndRow()][move.getEndColumn()].getFigure();
     field[move.getEndRow()][move.getEndColumn()].setFigure(figure);
     field[move.getStartRow()][move.getStartColumn()].setFigure(null);
   }
@@ -803,7 +808,7 @@ public class Board {
 
     Figure figure = field[move.getEndRow()][move.getEndColumn()].getFigure();
     field[move.getStartRow()][move.getStartColumn()].setFigure(figure);
-    field[move.getEndRow()][move.getEndColumn()].setFigure(null);
+    field[move.getEndRow()][move.getEndColumn()].setFigure(lastEndFieldFigure);
   }
 
   @Override
