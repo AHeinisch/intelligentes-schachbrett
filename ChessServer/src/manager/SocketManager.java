@@ -71,6 +71,7 @@ public class SocketManager {
       board = new Board();
       gameStarted = true;
       versusEngine = false;
+      awaitingAck = false;
       fileManager.createNewHistory();
       messageToClient(ServerConst.Ok_RESPONSE);
       return;
@@ -78,6 +79,7 @@ public class SocketManager {
       board = new Board();
       gameStarted = true;
       versusEngine = true;
+      awaitingAck = false;
       stockfish.clearMoveHistory();
       fileManager.createNewHistory();
       messageToClient(ServerConst.Ok_RESPONSE);
