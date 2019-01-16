@@ -29,7 +29,7 @@ public class LogicConst {
   public static final Move WHITE_SHORT_CASTLE_TOWER_MOVE = new Move(0, 7, 0, 5);
   public static final Move WHITE_LONG_CASTLE_TOWER_MOVE = new Move(0, 0, 0, 3);
   public static final Move BLACK_SHORT_CASTLE_TOWER_MOVE = new Move(7, 7, 7, 5);
-  public static final Move BLACK_LONG_CASTLE_TOWER_MOVE = new Move(7, 0, 7, 5);
+  public static final Move BLACK_LONG_CASTLE_TOWER_MOVE = new Move(7, 0, 7, 3);
 
   public static final byte KNIGHT = 'N';
   public static final byte BISHOP = 'B';
@@ -52,5 +52,5 @@ public class LogicConst {
   public static final byte ENGINE_EN_PASSANT = 4;
   public static final byte ENGINE_PROMOTION = 8;
   public static final byte ENGINE_CHECK = 16;
-  public static final byte ENGINE_CHECKMATE = 31;
+  public static final byte ENGINE_CHECKMATE = 32;
 }

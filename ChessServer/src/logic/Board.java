@@ -306,20 +306,26 @@ public class Board {
     if (whiteKingChecked()) {
       retVal[1] = (byte) lastMove.getEndColumn();
       retVal[2] = (byte) lastMove.getEndRow();
+      whitesTurn = !whitesTurn;
       if (whiteKingCheckmated()) {
+        whitesTurn = !whitesTurn;
         retVal[0] = LogicConst.CHECKMATE;
         return retVal;
       }
+      whitesTurn = !whitesTurn;
       retVal[0] = LogicConst.CHECK;
       return retVal;
     }
     if (blackKingChecked()) {
       retVal[1] = (byte) blackKing.getColumn();
       retVal[2] = (byte) blackKing.getRow();
+      whitesTurn = !whitesTurn;
       if (blackKingCheckmated()) {
+        whitesTurn = !whitesTurn;
         retVal[0] = LogicConst.CHECKMATE;
         return retVal;
       }
+      whitesTurn = !whitesTurn;
       retVal[0] = LogicConst.CHECK;
       return retVal;
     }
@@ -735,7 +741,7 @@ public class Board {
         retVal[1] = (byte) blackKing.getColumn();
         retVal[2] = (byte) blackKing.getRow();
         retVal[3] = (byte) lastMove.getEndColumn();
-        retVal[4] = (byte) lastMove.getStartColumn();
+        retVal[4] = (byte) lastMove.getEndRow();
         if (blackKingCheckmated()) {
           retVal[0] = LogicConst.EN_PASSANT_AND_CHECKMATE;
           return retVal;
@@ -753,7 +759,7 @@ public class Board {
         retVal[1] = (byte) whiteKing.getColumn();
         retVal[2] = (byte) whiteKing.getRow();
         retVal[3] = (byte) lastMove.getEndColumn();
-        retVal[4] = (byte) lastMove.getStartColumn();
+        retVal[4] = (byte) lastMove.getEndRow();
         if (whiteKingCheckmated()) {
           retVal[0] = LogicConst.EN_PASSANT_AND_CHECKMATE;
           return retVal;
@@ -764,7 +770,7 @@ public class Board {
     }
     retVal[0] = LogicConst.EN_PASSANT;
     retVal[1] = (byte) lastMove.getEndColumn();
-    retVal[2] = (byte) lastMove.getStartColumn();
+    retVal[2] = (byte) lastMove.getEndRow();
     return retVal;
   }
 

@@ -117,8 +117,8 @@ public class SocketManager {
     if (boardRetPlayer[0] != LogicConst.ILLEGAL && boardRetPlayer[0] != LogicConst.PROMOTION) {
       fileManager.appendTurnToHistory(playerMove.toString());
     }
-    if (boardRetPlayer[0] != LogicConst.ILLEGAL 
-        && boardRetPlayer[0] != LogicConst.PROMOTION && versusEngine) {
+    if (boardRetPlayer[0] != LogicConst.ILLEGAL && boardRetPlayer[0] 
+        != LogicConst.PROMOTION && versusEngine) {
       String engineTurn = stockfish.getTurn(playerMove.toString());
       Move engineMove = Decoder.engineTurnToMove(engineTurn);
       System.out.println(playerMove);
@@ -129,6 +129,9 @@ public class SocketManager {
       messageToClient(response);
       return;
     }
+    if (boardRetPlayer[0] == LogicConst.PROMOTION) {
+      awaitingAck = true;
+    }
     messageToClient(boardRetPlayer);
   }
 
@@ -136,7 +139,8 @@ public class SocketManager {
    * The the logic what the promoted figure should be. If there is no figure to
    * promote an error is returned to the client.
    * 
-   * @param figure the byte representation of the figure the client wants to have
+   * @param figure
+   *          the byte representation of the figure the client wants to have
    */
   private void processPromotionAck(byte figure) {
     if (!awaitingAck) {
@@ -189,7 +193,8 @@ public class SocketManager {
   /**
    * Keeps the Server open and connects to the client.
    * 
-   * @throws IOException gets thrown if the server fails to build up the connection.
+   * @throws IOException
+   *           gets thrown if the server fails to build up the connection.
    */
   public void manageConnection() throws IOException {
     serverSocket = new ServerSocket(ServerConst.PORT);
@@ -216,7 +221,8 @@ public class SocketManager {
   /**
    * Entry point to the program witch starts the server.
    * 
-   * @param args arguments given at the start
+   * @param args
+   *          arguments given at the start
    */
   public static void main(String[] args) {
     SocketManager mySocketManager = new SocketManager();
