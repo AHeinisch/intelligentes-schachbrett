@@ -5,8 +5,11 @@ import constants.LogicConst;
 import constants.ServerConst;
 import decoder.Decoder;
 import helper.Helper;
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -37,9 +40,12 @@ public class SocketManager {
 
   /**
    * Creates a new SocketManager.
+   * 
+   * @param enginePath
+   *          absolute Path to the place where the engine is stored
    */
-  public SocketManager() {
-    stockfish = new EngineManager(EngineConst.PATH);
+  public SocketManager(String enginePath) {
+    stockfish = new EngineManager(enginePath);
     fileManager = new FileManager();
   }
 
@@ -119,8 +125,8 @@ public class SocketManager {
     if (boardRetPlayer[0] != LogicConst.ILLEGAL && boardRetPlayer[0] != LogicConst.PROMOTION) {
       fileManager.appendTurnToHistory(playerMove.toString());
     }
-    if (boardRetPlayer[0] != LogicConst.ILLEGAL && boardRetPlayer[0] 
-        != LogicConst.PROMOTION && versusEngine) {
+    if (boardRetPlayer[0] != LogicConst.ILLEGAL
+        && boardRetPlayer[0] != LogicConst.PROMOTION && versusEngine) {
       String engineTurn = stockfish.getTurn(playerMove.toString());
       Move engineMove = Decoder.engineTurnToMove(engineTurn);
       System.out.println(playerMove);
@@ -227,7 +233,19 @@ public class SocketManager {
    *          arguments given at the start
    */
   public static void main(String[] args) {
-    SocketManager mySocketManager = new SocketManager();
+    InputStreamReader isr = new InputStreamReader(System.in);
+    BufferedReader br = new BufferedReader(isr);
+    System.out.print("Engine Paths: ");
+    String enginePath = "";
+    try {
+      enginePath = br.readLine();
+    } catch (IOException e1) {
+      e1.printStackTrace();
+    }
+    if (enginePath.equals("")) {
+      enginePath = EngineConst.PATH;
+    }
+    SocketManager mySocketManager = new SocketManager(enginePath);
     try {
       mySocketManager.manageConnection();
     } catch (IOException e) {
