@@ -9,8 +9,12 @@
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_cp22wBqCEemmRMwDX8AcdQ" name="DigitalIn"/>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_sC2yUBqIEemmRMwDX8AcdQ" name="PinName"/>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_v42zgBqIEemmRMwDX8AcdQ" name="DigitalOut"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Px_SkBspEemJoKjn0TzuGA" name="TCPSocket"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_WAp0QBspEemJoKjn0TzuGA" name="EthernetInterface"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_kHZsgBspEemJoKjn0TzuGA" name="Mail"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_J2nq4BsqEemJoKjn0TzuGA" name="osEvent"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_kPE7sBqCEemmRMwDX8AcdQ" name="MCP23017" visibility="protected">
+  <packagedElement xmi:type="uml:Class" xmi:id="_kPE7sBqCEemmRMwDX8AcdQ" name="MCP23017" visibility="public">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_P4YS4BqDEemmRMwDX8AcdQ" name="adress" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Y-VKwBqDEemmRMwDX8AcdQ" name="i2c" type="_axtCUBqCEemmRMwDX8AcdQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_dVq-cBqDEemmRMwDX8AcdQ" name="lastMeasurementA" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
@@ -180,5 +184,68 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_P3s20BsaEem5kZ0q4kYB3Q" name="AI check" incoming="_f37ZMBsaEem5kZ0q4kYB3Q" outgoing="_0Jt3YBsaEem5kZ0q4kYB3Q"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_Q95C0BsaEem5kZ0q4kYB3Q" name="AI checkmate" incoming="_pcYK8BsaEem5kZ0q4kYB3Q" outgoing="_uE7DYBsaEem5kZ0q4kYB3Q"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_2azwQBsaEem5kZ0q4kYB3Q" name="status = Waitingplayer" incoming="_uE7DYBsaEem5kZ0q4kYB3Q _vN0lIBsaEem5kZ0q4kYB3Q _CSRGcBsbEem5kZ0q4kYB3Q _SeGmcBscEem5kZ0q4kYB3Q" outgoing="_EFKncBsbEem5kZ0q4kYB3Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FmrKkBsoEemJoKjn0TzuGA" name="Game">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_tzpk0BsoEemJoKjn0TzuGA" name="b" type="_hFHu4BqHEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_wZPHABsoEemJoKjn0TzuGA" name="buttonQueen" type="_cp22wBqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_5gMrgBsoEemJoKjn0TzuGA" name="buttonKnight" type="_cp22wBqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8ONw8BsoEemJoKjn0TzuGA" name="buttonBishop" type="_cp22wBqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_CoE2ABspEemJoKjn0TzuGA" name="buttonRook" type="_cp22wBqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_GqQ5EBspEemJoKjn0TzuGA" name="buttonAI" type="_cp22wBqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_JrVdYBspEemJoKjn0TzuGA" name="buttonPVP" type="_cp22wBqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_QqwtoBspEemJoKjn0TzuGA" name="socket" type="_Px_SkBspEemJoKjn0TzuGA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_WWUiQBspEemJoKjn0TzuGA" name="net" type="_WAp0QBspEemJoKjn0TzuGA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_kpK80BspEemJoKjn0TzuGA" name="communication" type="_kHZsgBspEemJoKjn0TzuGA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_thdzMBspEemJoKjn0TzuGA" name="pendingMoves" type="_kHZsgBspEemJoKjn0TzuGA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_KN9M0BsqEemJoKjn0TzuGA" name="evtCommunication" type="_J2nq4BsqEemJoKjn0TzuGA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OELQcBsqEemJoKjn0TzuGA" name="evtPendingMoves" type="_J2nq4BsqEemJoKjn0TzuGA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_toR68hsrEemJoKjn0TzuGA" name="board" type="_hFHu4BqHEemmRMwDX8AcdQ" association="_toQs0BsrEemJoKjn0TzuGA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_toSiABsrEemJoKjn0TzuGA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_toSiARsrEemJoKjn0TzuGA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_aYKxoBsqEemJoKjn0TzuGA" name="Board"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_bfPHYBsqEemJoKjn0TzuGA" name="init"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_cWA-YBsqEemJoKjn0TzuGA" name="step"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_2Ff0UBsqEemJoKjn0TzuGA" name="checkerThreadStart" visibility="private" isStatic="true">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2Ff0URsqEemJoKjn0TzuGA" name="p : void const*"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ejmQQBsqEemJoKjn0TzuGA" name="checkBoardSetup" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jx7WUBsqEemJoKjn0TzuGA" name="errorCode" type="_ZMA24BqCEemmRMwDX8AcdQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_rUtLQBsqEemJoKjn0TzuGA" name="checkerThread" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_CafbEBsrEemJoKjn0TzuGA" name="addPendingMove" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_CafbERsrEemJoKjn0TzuGA" name="x" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_CafbEhsrEemJoKjn0TzuGA" name="y" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_CafbExsrEemJoKjn0TzuGA" name="up">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_E019oBsrEemJoKjn0TzuGA" name="clearMails" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_bTi_UBsrEemJoKjn0TzuGA" name="endTelegram" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_bTi_URsrEemJoKjn0TzuGA" name="errorCode" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_bTi_UhsrEemJoKjn0TzuGA" name="socket" type="_Px_SkBspEemJoKjn0TzuGA"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_bTi_UxsrEemJoKjn0TzuGA" name="commandByte">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EChar"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_bTi_VBsrEemJoKjn0TzuGA" name="byte1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EChar"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_bTi_VRsrEemJoKjn0TzuGA" name="byte2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EChar"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_bTi_VhsrEemJoKjn0TzuGA" name="byte3">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EChar"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_bTi_VxsrEemJoKjn0TzuGA" name="byte4">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EChar"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ctTAgBsrEemJoKjn0TzuGA" name="startPressed" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_toQs0BsrEemJoKjn0TzuGA" memberEnd="_toR68hsrEemJoKjn0TzuGA _toSiAhsrEemJoKjn0TzuGA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_toR68BsrEemJoKjn0TzuGA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_toR68RsrEemJoKjn0TzuGA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_toSiAhsrEemJoKjn0TzuGA" name="game" type="_FmrKkBsoEemJoKjn0TzuGA" association="_toQs0BsrEemJoKjn0TzuGA"/>
   </packagedElement>
 </uml:Model>
