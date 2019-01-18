@@ -6,33 +6,59 @@
   <packageImport xmi:type="uml:PackageImport" xmi:id="_gXSf8BnAEemHbN8hQv7sQA">
     <importedPackage xmi:type="uml:Package" href="pathmap://SysML14_LIBRARIES/SysML-Standard-Library.uml#SysML.package_packagedElement_Libraries"/>
   </packageImport>
-  <packagedElement xmi:type="uml:StateMachine" xmi:id="_ivCacBnAEemHbN8hQv7sQA" name="StateMachine13">
-    <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_FNt_sBnCEemHbN8hQv7sQA" name="EntryPoint2" kind="entryPoint"/>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_ivCacBnAEemHbN8hQv7sQA" name="gameStep">
+    <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_FNt_sBnCEemHbN8hQv7sQA" name="start" kind="entryPoint"/>
     <region xmi:type="uml:Region" xmi:id="_j2B3sBnAEemHbN8hQv7sQA" name="Region1">
       <transition xmi:type="uml:Transition" xmi:id="_JEZWUBnCEemHbN8hQv7sQA" source="_FNt_sBnCEemHbN8hQv7sQA" target="_w3a08BnBEemHbN8hQv7sQA"/>
       <transition xmi:type="uml:Transition" xmi:id="_P-FK8BnCEemHbN8hQv7sQA" name="newgame->boardsetup" source="_w3a08BnBEemHbN8hQv7sQA" target="_zZaQkBnBEemHbN8hQv7sQA"/>
       <transition xmi:type="uml:Transition" xmi:id="_dj78oBnCEemHbN8hQv7sQA" name="boardsetup->start" source="_zZaQkBnBEemHbN8hQv7sQA" target="_3YWyYBnBEemHbN8hQv7sQA"/>
-      <transition xmi:type="uml:Transition" xmi:id="_pk4mABnCEemHbN8hQv7sQA" name="first figure lifted" source="_3YWyYBnBEemHbN8hQv7sQA" target="_34XvMBnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_pk4mABnCEemHbN8hQv7sQA" name="start->oneup" source="_3YWyYBnBEemHbN8hQv7sQA" target="_34XvMBnBEemHbN8hQv7sQA"/>
       <transition xmi:type="uml:Transition" xmi:id="_zdjUQBnCEemHbN8hQv7sQA" name="second figure lifted" source="_34XvMBnBEemHbN8hQv7sQA" target="_4h3_MBnBEemHbN8hQv7sQA"/>
-      <transition xmi:type="uml:Transition" xmi:id="_4O5jYBnCEemHbN8hQv7sQA" name="second figure set down" source="_34XvMBnBEemHbN8hQv7sQA" target="_5e3y8BnBEemHbN8hQv7sQA"/>
-      <transition xmi:type="uml:Transition" xmi:id="__fn_ABnCEemHbN8hQv7sQA" name="third figure set down" source="_4h3_MBnBEemHbN8hQv7sQA" target="_5e3y8BnBEemHbN8hQv7sQA"/>
-      <transition xmi:type="uml:Transition" xmi:id="_FjY4QBnDEemHbN8hQv7sQA" source="_5e3y8BnBEemHbN8hQv7sQA" target="_6Dfi8BnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_4O5jYBnCEemHbN8hQv7sQA" name="oneup->send" source="_34XvMBnBEemHbN8hQv7sQA" target="_5e3y8BnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="__fn_ABnCEemHbN8hQv7sQA" name="twoup->send" source="_4h3_MBnBEemHbN8hQv7sQA" target="_5e3y8BnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_FjY4QBnDEemHbN8hQv7sQA" name="send->waitingserver" source="_5e3y8BnBEemHbN8hQv7sQA" target="_6Dfi8BnBEemHbN8hQv7sQA"/>
       <transition xmi:type="uml:Transition" xmi:id="_nRKacBnDEemHbN8hQv7sQA" name="waitingserver->waitingplayer" source="_6Dfi8BnBEemHbN8hQv7sQA" target="_636pgBnBEemHbN8hQv7sQA"/>
       <transition xmi:type="uml:Transition" xmi:id="_xn-dQBnDEemHbN8hQv7sQA" name="waitingplayer->endgame" source="_636pgBnBEemHbN8hQv7sQA" target="_70HzEBnBEemHbN8hQv7sQA"/>
       <transition xmi:type="uml:Transition" xmi:id="_5hv14BnDEemHbN8hQv7sQA" name="oneup->start" source="_34XvMBnBEemHbN8hQv7sQA" target="_3YWyYBnBEemHbN8hQv7sQA"/>
-      <subvertex xmi:type="uml:State" xmi:id="_hanvwBnBEemHbN8hQv7sQA" name="Firstinit"/>
-      <subvertex xmi:type="uml:State" xmi:id="_w3a08BnBEemHbN8hQv7sQA" name="Newgame"/>
-      <subvertex xmi:type="uml:State" xmi:id="_zZaQkBnBEemHbN8hQv7sQA" name="Boardsetup"/>
-      <subvertex xmi:type="uml:State" xmi:id="_3YWyYBnBEemHbN8hQv7sQA" name="Start"/>
-      <subvertex xmi:type="uml:State" xmi:id="_34XvMBnBEemHbN8hQv7sQA" name="Oneup"/>
-      <subvertex xmi:type="uml:State" xmi:id="_4h3_MBnBEemHbN8hQv7sQA" name="Twoup"/>
-      <subvertex xmi:type="uml:State" xmi:id="_5e3y8BnBEemHbN8hQv7sQA" name="Send"/>
+      <transition xmi:type="uml:Transition" xmi:id="_JwfU4BsCEem5kZ0q4kYB3Q" name="newgame->error" source="_w3a08BnBEemHbN8hQv7sQA" target="_8W6XEBnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_gI1acBsDEem5kZ0q4kYB3Q" name="boardsetup->boardsetup" source="_zZaQkBnBEemHbN8hQv7sQA" target="_zZaQkBnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_69O0kBsEEem5kZ0q4kYB3Q" name="start->waitingplayer" source="_3YWyYBnBEemHbN8hQv7sQA" target="_636pgBnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_D5XMoBsGEem5kZ0q4kYB3Q" name="twoup->waitingplayer" source="_4h3_MBnBEemHbN8hQv7sQA" target="_636pgBnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_R4EtwBsHEem5kZ0q4kYB3Q" name="send->error" source="_5e3y8BnBEemHbN8hQv7sQA" target="_8W6XEBnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_6bggMBsHEem5kZ0q4kYB3Q" name="waitingserver->error" source="_6Dfi8BnBEemHbN8hQv7sQA" target="_8W6XEBnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_pHmS8BsIEem5kZ0q4kYB3Q" name="waitingserver->endgame" source="_6Dfi8BnBEemHbN8hQv7sQA" target="_70HzEBnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_u55zUBsJEem5kZ0q4kYB3Q" name="waitingplayer->waitingserver" source="_636pgBnBEemHbN8hQv7sQA" target="_6Dfi8BnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_0CxKkBsJEem5kZ0q4kYB3Q" name="waitingplayer->start" source="_636pgBnBEemHbN8hQv7sQA" target="_3YWyYBnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_YNJ5IBsKEem5kZ0q4kYB3Q" name="endgame->endgame" source="_70HzEBnBEemHbN8hQv7sQA" target="_70HzEBnBEemHbN8hQv7sQA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_eMYQoBsKEem5kZ0q4kYB3Q" name="error->error" source="_8W6XEBnBEemHbN8hQv7sQA" target="_8W6XEBnBEemHbN8hQv7sQA"/>
+      <subvertex xmi:type="uml:State" xmi:id="_w3a08BnBEemHbN8hQv7sQA" name="Newgame">
+        <doActivity xmi:type="uml:FunctionBehavior" xmi:id="_2ry78BsBEem5kZ0q4kYB3Q" name="sendTelegramStart">
+          <language>C++</language>
+          <body></body>
+        </doActivity>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_zZaQkBnBEemHbN8hQv7sQA" name="Boardsetup">
+        <doActivity xmi:type="uml:FunctionBehavior" xmi:id="_cFMl4BsDEem5kZ0q4kYB3Q" name="checkBoardSetup"/>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_3YWyYBnBEemHbN8hQv7sQA" name="Start">
+        <doActivity xmi:type="uml:FunctionBehavior" xmi:id="_eGbBUBsEEem5kZ0q4kYB3Q" name="communicationGet"/>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_34XvMBnBEemHbN8hQv7sQA" name="Oneup">
+        <doActivity xmi:type="uml:FunctionBehavior" xmi:id="_SIeMIBsFEem5kZ0q4kYB3Q" name="communicationGet2"/>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_4h3_MBnBEemHbN8hQv7sQA" name="Twoup">
+        <doActivity xmi:type="uml:FunctionBehavior" xmi:id="_0rDPYBsFEem5kZ0q4kYB3Q" name="communicationGet3"/>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_5e3y8BnBEemHbN8hQv7sQA" name="Send">
+        <doActivity xmi:type="uml:FunctionBehavior" xmi:id="_CHbfgBsHEem5kZ0q4kYB3Q" name="sendTelegramSend"/>
+      </subvertex>
       <subvertex xmi:type="uml:State" xmi:id="_6Dfi8BnBEemHbN8hQv7sQA" name="Waitingserver"/>
       <subvertex xmi:type="uml:State" xmi:id="_636pgBnBEemHbN8hQv7sQA" name="Waitingplayer"/>
       <subvertex xmi:type="uml:State" xmi:id="_70HzEBnBEemHbN8hQv7sQA" name="Endgame"/>
       <subvertex xmi:type="uml:State" xmi:id="_8W6XEBnBEemHbN8hQv7sQA" name="Error"/>
     </region>
   </packagedElement>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_rppnsBsCEem5kZ0q4kYB3Q" name="sendTelegramEqual1"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_gW6FcBnAEemHbN8hQv7sQA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gW6FcRnAEemHbN8hQv7sQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#/"/>
