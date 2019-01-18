@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ModelElements="http://www.eclipse.org/papyrus/sysml/1.4/SysML/ModelElements" xmlns:Requirements="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/sysml/1.4/SysML/ModelElements http://www.eclipse.org/papyrus/sysml/1.4/SysML#//modelelements http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements http://www.eclipse.org/papyrus/sysml/1.4/SysML#//requirements">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Blocks="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Blocks" xmlns:ModelElements="http://www.eclipse.org/papyrus/sysml/1.4/SysML/ModelElements" xmlns:Requirements="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Blocks http://www.eclipse.org/papyrus/sysml/1.4/SysML#//blocks http://www.eclipse.org/papyrus/sysml/1.4/SysML/ModelElements http://www.eclipse.org/papyrus/sysml/1.4/SysML#//modelelements http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements http://www.eclipse.org/papyrus/sysml/1.4/SysML#//requirements">
   <uml:Model xmi:id="_4yFxsNRCEeihRZNSpa5MBg" name="EmbeddedAnforderungsdiagramm" visibility="package">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_5DQaMNRCEeihRZNSpa5MBg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -34,6 +34,14 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_t73SUNegEeiew_rTJwmvtw" name="Fehlerhafte Züge erkennen"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_Mih5oNehEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_t73SUNegEeiew_rTJwmvtw" supplier="_UjCPoNRwEeihRZNSpa5MBg"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_SXzq8NehEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_agP08NRwEeihRZNSpa5MBg" supplier="_t73SUNegEeiew_rTJwmvtw"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s_OksBpsEemmRMwDX8AcdQ" name="MCP23017">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_rBG1sBptEemmRMwDX8AcdQ" name="id" type="_-a8iwBpuEemmRMwDX8AcdQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yeiGABpsEemmRMwDX8AcdQ" name="Game"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ywIMUBpsEemmRMwDX8AcdQ" name="IO">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5KT18Bp2EemmRMwDX8AcdQ" name="mcps" type="_s_OksBpsEemmRMwDX8AcdQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_-a8iwBpuEemmRMwDX8AcdQ" name="uint8_t"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5C1jcNRCEeihRZNSpa5MBg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5C_UcNRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#/"/>
@@ -111,4 +119,7 @@
   <Requirements:Requirement xmi:id="_ekD-sNecEeiew_rTJwmvtw" base_Class="_ej5moNecEeiew_rTJwmvtw" id="2.4" text="Das System soll das Feld erkennen, auf dem eine hochgenommene Figur abgestellt wird"/>
   <Requirements:Requirement xmi:id="_JEY7oNedEeiew_rTJwmvtw" base_Class="_JELgQNedEeiew_rTJwmvtw" id="2.1" text="Das System soll erkennen können, welche Figur vom Nutzer angehoben wird"/>
   <Requirements:Requirement xmi:id="_t8CRcNegEeiew_rTJwmvtw" base_Class="_t73SUNegEeiew_rTJwmvtw" id="2.2" text="Das System soll fehlerhafte Spielzüge erkennen und nicht akzeptieren."/>
+  <Blocks:Block xmi:id="_s_j74BpsEemmRMwDX8AcdQ" base_Class="_s_OksBpsEemmRMwDX8AcdQ"/>
+  <Blocks:Block xmi:id="_yemXcBpsEemmRMwDX8AcdQ" base_Class="_yeiGABpsEemmRMwDX8AcdQ"/>
+  <Blocks:Block xmi:id="_ywMdwBpsEemmRMwDX8AcdQ" base_Class="_ywIMUBpsEemmRMwDX8AcdQ"/>
 </xmi:XMI>
