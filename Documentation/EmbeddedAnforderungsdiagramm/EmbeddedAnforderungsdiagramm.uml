@@ -13,12 +13,9 @@
       <nestedClassifier xmi:type="uml:Class" xmi:id="_WUPHgNRwEeihRZNSpa5MBg" name="Anzeigen welcher Spieler am Zug ist"/>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_lrzucNRwEeihRZNSpa5MBg" name="Speichern der Züge"/>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_gpJF0NRwEeihRZNSpa5MBg" name="Visualisierung der Züge der Chess Engine"/>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_dV-r8NRwEeihRZNSpa5MBg" name="Automatische Uhr"/>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_JqNdMNR2EeihRZNSpa5MBg" name="Kommunikation mit Chess Engine"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_agP08NRwEeihRZNSpa5MBg" name="Fehlermeldung bei illegalen Zügen"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_FsyswNRzEeihRZNSpa5MBg" name="Uhr einstellen"/>
-    <packagedElement xmi:type="uml:Dependency" xmi:id="_Tm0iMNR0EeihRZNSpa5MBg" name="&lt;&lt;derive>>" client="_FsyswNRzEeihRZNSpa5MBg" supplier="_R0T_kNRwEeihRZNSpa5MBg"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_wojWkNR1EeihRZNSpa5MBg" name="&lt;&lt;derive>>" client="_lrzucNRwEeihRZNSpa5MBg" supplier="_UjCPoNRwEeihRZNSpa5MBg"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_ZlnJ8NR2EeihRZNSpa5MBg" name="&lt;&lt;derive>>" client="_gpJF0NRwEeihRZNSpa5MBg" supplier="_JqNdMNR2EeihRZNSpa5MBg"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_zCel4NR2EeihRZNSpa5MBg" name="Ursprung der Figur anzeigen"/>
@@ -27,7 +24,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_pY5FINeaEeiew_rTJwmvtw" name="Figur umwandeln"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_ej5moNecEeiew_rTJwmvtw" name="Zielfeld erkennen"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_4uE0gNecEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_pY5FINeaEeiew_rTJwmvtw" supplier="_4yFxsNRCEeihRZNSpa5MBg"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_JELgQNedEeiew_rTJwmvtw" name="Ursprugsfeld erkennen"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JELgQNedEeiew_rTJwmvtw" name="Ursprungsfeld erkennen"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_WQ6nUNedEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_ej5moNecEeiew_rTJwmvtw" supplier="_UjCPoNRwEeihRZNSpa5MBg"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_eWyiQNedEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_JELgQNedEeiew_rTJwmvtw" supplier="_UjCPoNRwEeihRZNSpa5MBg"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_uVnWcNedEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_zCel4NR2EeihRZNSpa5MBg" supplier="_4yFxsNRCEeihRZNSpa5MBg"/>
@@ -108,10 +105,8 @@
   <Requirements:Requirement xmi:id="_UjN10NRwEeihRZNSpa5MBg" base_Class="_UjCPoNRwEeihRZNSpa5MBg" id="2" text="Das System soll erkennen können, von wo nach wo die Figuren bewegt werden."/>
   <Requirements:Requirement xmi:id="_WUatsNRwEeihRZNSpa5MBg" base_Class="_WUPHgNRwEeihRZNSpa5MBg" id="3" text="Das System soll anzeigen können, ob schwarz oder weiß am Zug ist."/>
   <Requirements:Requirement xmi:id="_agZl8NRwEeihRZNSpa5MBg" base_Class="_agP08NRwEeihRZNSpa5MBg" id="2.2.1" text="Fehlerhafte Züge sollen nicht akzepiert werden und der Nutzer soll auf den Fehler aufmeksam gemacht werden."/>
-  <Requirements:Requirement xmi:id="_dWK5MNRwEeihRZNSpa5MBg" base_Class="_dV-r8NRwEeihRZNSpa5MBg" id="5" text="Nach dem korrekten Setzen einer Figur soll die Zeit automatisch für den jeweils anderen Spieler laufen"/>
   <Requirements:Requirement xmi:id="_gpQakNRwEeihRZNSpa5MBg" base_Class="_gpJF0NRwEeihRZNSpa5MBg" id="4.1" text="Die Züge der Chess Engine müssen dem Nutzer visualisiert werden können"/>
   <Requirements:Requirement xmi:id="_lr_UoNRwEeihRZNSpa5MBg" base_Class="_lrzucNRwEeihRZNSpa5MBg" id="2.3" text="Die gespielten Züge sollen zur späteren Analyse auf einem Server gespeichert weden"/>
-  <Requirements:Requirement xmi:id="_Fs-S8NRzEeihRZNSpa5MBg" base_Class="_FsyswNRzEeihRZNSpa5MBg" id="1.1" text="Der Nutzer muss die Zeit, die den Spielern zur verfügung stehen soll, einstellen können"/>
   <Requirements:Requirement xmi:id="_JqVZANR2EeihRZNSpa5MBg" base_Class="_JqNdMNR2EeihRZNSpa5MBg" id="4" text="Das System soll mit einer KI, die auf einem Server läuft, kommunizieren können."/>
   <Requirements:Requirement xmi:id="_zCmhsNR2EeihRZNSpa5MBg" base_Class="_zCel4NR2EeihRZNSpa5MBg" id="2.1.1" text="Dem Nutzer soll mittels einer LED das Ursprungsfeld visualisiert werden."/>
   <ModelElements:Stakeholder xmi:id="_EJLBENR3EeihRZNSpa5MBg" base_Classifier="_EI_a4NR3EeihRZNSpa5MBg"/>
