@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_LXTw4BqCEemmRMwDX8AcdQ" name="uml">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_La8TsBqCEemmRMwDX8AcdQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_XU6yYBqCEemmRMwDX8AcdQ" name="mbed">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ZMA24BqCEemmRMwDX8AcdQ" name="uint8_t"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_axtCUBqCEemmRMwDX8AcdQ" name="I2C"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_cp22wBqCEemmRMwDX8AcdQ" name="DigitalIn"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_sC2yUBqIEemmRMwDX8AcdQ" name="PinName"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_v42zgBqIEemmRMwDX8AcdQ" name="DigitalOut"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_kPE7sBqCEemmRMwDX8AcdQ" name="MCP23017">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_P4YS4BqDEemmRMwDX8AcdQ" name="adress" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Y-VKwBqDEemmRMwDX8AcdQ" name="i2c" type="_axtCUBqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_dVq-cBqDEemmRMwDX8AcdQ" name="lastMeasurementA" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_eyzq0BqDEemmRMwDX8AcdQ" name="lastMeasurementB" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_8oruYBqDEemmRMwDX8AcdQ" name="create MCP23017" specification="_ii1KYBqEEemmRMwDX8AcdQ">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_8oruYRqDEemmRMwDX8AcdQ" name="adress" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_8oruYhqDEemmRMwDX8AcdQ" name="i2c" type="_axtCUBqCEemmRMwDX8AcdQ"/>
+    </ownedBehavior>
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_IUmi8BqEEemmRMwDX8AcdQ" name="init" specification="_9ZRoYBqEEemmRMwDX8AcdQ"/>
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_iQfdMBqEEemmRMwDX8AcdQ" name="writeRegister">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_iQfdMRqEEemmRMwDX8AcdQ" name="register" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_iQfdMhqEEemmRMwDX8AcdQ" name="data" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+    </ownedBehavior>
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_iQgEQBqEEemmRMwDX8AcdQ" name="readRegister" specification="_RD71IBqFEemmRMwDX8AcdQ">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_iQgEQRqEEemmRMwDX8AcdQ" name="register" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_iQgEQhqEEemmRMwDX8AcdQ" name="data" type="_ZMA24BqCEemmRMwDX8AcdQ" direction="return"/>
+    </ownedBehavior>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ii1KYBqEEemmRMwDX8AcdQ" name="MCP23017" method="_8oruYBqDEemmRMwDX8AcdQ">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_3ddKMBqEEemmRMwDX8AcdQ" name="adress" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5zw6QBqEEemmRMwDX8AcdQ" name="i2c" type="_axtCUBqCEemmRMwDX8AcdQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_9ZRoYBqEEemmRMwDX8AcdQ" name="init" method="_IUmi8BqEEemmRMwDX8AcdQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_KITfwBqFEemmRMwDX8AcdQ" name="writeRegister">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KITfwRqFEemmRMwDX8AcdQ" name="register" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KITfwhqFEemmRMwDX8AcdQ" name="data" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KITfwxqFEemmRMwDX8AcdQ" name="errorCode" type="_ZMA24BqCEemmRMwDX8AcdQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_RD71IBqFEemmRMwDX8AcdQ" name="readRegister" method="_iQgEQBqEEemmRMwDX8AcdQ">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_RD71IRqFEemmRMwDX8AcdQ" name="register" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_RD71IhqFEemmRMwDX8AcdQ" name="data" type="_ZMA24BqCEemmRMwDX8AcdQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_YNUSoBqFEemmRMwDX8AcdQ" name="readGPIO">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_YNU5sBqFEemmRMwDX8AcdQ" name="register" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_YNU5sRqFEemmRMwDX8AcdQ" name="data" type="_ZMA24BqCEemmRMwDX8AcdQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_jqSsQBqFEemmRMwDX8AcdQ" name="writeGPIO">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jqSsQRqFEemmRMwDX8AcdQ" name="register" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jqSsQhqFEemmRMwDX8AcdQ" name="data" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jqSsQxqFEemmRMwDX8AcdQ" name="errorCode" type="_ZMA24BqCEemmRMwDX8AcdQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pZBJoBqFEemmRMwDX8AcdQ" name="getChanges">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pZBJoRqFEemmRMwDX8AcdQ" name="port" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pZBJohqFEemmRMwDX8AcdQ" name="changes" type="_ZMA24BqCEemmRMwDX8AcdQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_hFHu4BqHEemmRMwDX8AcdQ" name="Board">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ptwYoBqHEemmRMwDX8AcdQ" name="mcps" type="_kPE7sBqCEemmRMwDX8AcdQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zO9MoBqIEemmRMwDX8AcdQ" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_w6--4BqIEemmRMwDX8AcdQ" name="I2CReset" type="_v42zgBqIEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bdMG8BqQEemmRMwDX8AcdQ" name="i2c" type="_axtCUBqCEemmRMwDX8AcdQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_JzpdYBqQEemmRMwDX8AcdQ" name="Board"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_KnA0ABqQEemmRMwDX8AcdQ" name="init"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_2bqOoBqHEemmRMwDX8AcdQ" name="ledToggle">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2bqOoRqHEemmRMwDX8AcdQ" name="x" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2bqOohqHEemmRMwDX8AcdQ" name="y" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2bqOoxqHEemmRMwDX8AcdQ" name="on" type="_ZMA24BqCEemmRMwDX8AcdQ">
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_2bqOpBqHEemmRMwDX8AcdQ" name="ON" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_7FoqcBqHEemmRMwDX8AcdQ" name="checkField">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_7FoqcRqHEemmRMwDX8AcdQ" name="x" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_7FoqchqHEemmRMwDX8AcdQ" name="y" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_9OOHkBqHEemmRMwDX8AcdQ" name="ledsOff"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ggoLoBqQEemmRMwDX8AcdQ" name="updateAll"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_eY308BqQEemmRMwDX8AcdQ" name="resetI2C"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_-7l_oBqYEemmRMwDX8AcdQ" name="getChange">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-7l_oRqYEemmRMwDX8AcdQ" name="koordinaten" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_A_NdMBqZEemmRMwDX8AcdQ" name="coords">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Y9dmEBqZEemmRMwDX8AcdQ" name="x" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_akNhcBqZEemmRMwDX8AcdQ" name="y" type="_ZMA24BqCEemmRMwDX8AcdQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_et6hwBqZEemmRMwDX8AcdQ" name="up">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+  </packagedElement>
+</uml:Model>
