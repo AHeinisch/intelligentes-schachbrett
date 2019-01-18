@@ -39,7 +39,9 @@ public class Decoder {
     endRow--;
     Move retVal = new Move(startRow, startColumn, endRow, endColumn);
     if (turn.length() == DecoderConst.PROMOTION_TURN_LENGTH) {
-      retVal.setPromotion((byte) turn.charAt(DecoderConst.PROMOTION_POSITION));
+      byte figureCode = DecoderConst.PROMOTION_MAP.get(
+          turn.charAt(DecoderConst.PROMOTION_POSITION)).byteValue();
+      retVal.setPromotion(figureCode);
     }
     return retVal;
   }
