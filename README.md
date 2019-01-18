@@ -1,7 +1,5 @@
 # intelligentes-schachbrett
 
-[TOC]
-
 ## What is this?
 
 The project "intelligentes-schachbrett" combines playing on a physical chessboard with modern engines.
