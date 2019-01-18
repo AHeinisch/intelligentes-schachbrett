@@ -14,7 +14,7 @@
 
 #### Examples
 
-##### <a name="MC_Start"></a>Start
+##### <a name="MC_Start">Start</a>
 
 | Case              | Byte 1 | Byte 2 |
 | ----------------- | ------ | ------ |
@@ -23,7 +23,7 @@
 
 
 
-##### <a name="MC_NewTurn"></a>NewTurn
+##### <a name="MC_NewTurn">NewTurn</a>
 
 | Case               | Byte 1 | Byte 2 | Byte 3 | Byte 4 | Byte 5 |
 | ------------------ | ------ | ------ | ------ | ------ | ------ |
@@ -53,7 +53,7 @@ The first byte of each command is a combination of all command bits.
 
 #### Examples
 
-##### <a name="Srv_Castling"></a>Castling
+##### <a name="Srv_Castling">Castling</a>
 
 - Short castling white (King E1G1)
 
@@ -77,7 +77,7 @@ The first byte of each command is a combination of all command bits.
 
 
 
-##### <a name="Srv_EnPassant"></a>En passant
+##### <a name="Srv_EnPassant">En passant</a>
 
 - Pawn D5C6 (After Pawn C7C5)
 
@@ -91,7 +91,7 @@ The first byte of each command is a combination of all command bits.
 
 
 
-##### <a name="Srv_Promotion"></a>Promotion
+##### <a name="Srv_Promotion">Promotion</a>
 
 - Pawn A7A8 (becomes Queen)
 
@@ -109,7 +109,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 
 
-##### <a name="Srv_Check"></a>Check
+##### <a name="Srv_Check">Check</a>
 
 - Rook A2C2 (checks King C6)
 
@@ -119,7 +119,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 
 
-##### <a name="Srv_Checkmate"></a>Checkmate
+##### <a name="Srv_Checkmate">Checkmate</a>
 
 - Queen D8H4 (checkmates King E1)
 
@@ -129,7 +129,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 
 
-##### <a name="Srv_Illegal"></a>Illegal
+##### <a name="Srv_Illegal">Illegal</a>
 
 - Pawn A2A1 (which is an illegal move)
 
@@ -154,7 +154,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 ##### AI moves examples
 
-###### <a name="AI_OK"></a>OK (regular move)
+###### <a name="AI_OK">OK (regular move)</a>
 
 - A1A2
 
@@ -170,7 +170,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 
 
-###### <a name="AI_Castling"></a>Castling
+###### <a name="AI_Castling">Castling</a>
 
 - Short castling white (King E1G1)
 
@@ -194,7 +194,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 
 
-###### <a name="AI_EnPassant"></a>En passant
+###### <a name="AI_EnPassant">En passant</a>
 
 - Pawn D5C6 (After Pawn C7C5)
 
@@ -208,7 +208,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 
 
-###### <a name="AI_Promotion"></a>Promotion
+###### <a name="AI_Promotion">Promotion</a>
 
 - Pawn A7A8 (becomes Queen)
 
@@ -224,7 +224,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 
 
-###### <a name="AI_Check"></a>Check
+###### <a name="AI_Check">Check</a>
 
 - Rook A2C2 (checks King C6)
 
@@ -234,7 +234,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 
 
-###### <a name="AI_Checkmate"></a>Checkmate
+###### <a name="AI_Checkmate">Checkmate</a>
 
 - Queen D8H4 (checkmates King E1)
 
@@ -247,7 +247,7 @@ The server has to wait for a Promotion Ack-command by the MC after sending this.
 
 ### Definitions
 
-#### <a name="Def_Figures"></a>Figures
+#### <a name="Def_Figures">Figures</a>
 
 | Figure | Char | ASCII (Dec) | ASCII (Hex) |
 | ------ | ---- | ----------- | ----------- |
