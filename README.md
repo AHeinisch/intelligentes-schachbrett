@@ -9,6 +9,10 @@ The Project consists of to parts:
 - the actuall physicall chessboard witch recognises moves through hall sensors and sends them to the server
 - the server part witch evaluates and saves the played move, communicates with the engine and returns the evaluation and the move of the engine attached to it.
 
+## System architecture
+
+![SystemArchitecture](Documentation/SystemArchitecture.png)
+
 ## Server
 
 ### Manual
@@ -31,4 +35,13 @@ The Project consists of to parts:
 ### Activity diagram
 
 ![ActivityDiagram](Documentation/ServerDiagrams/ActivityDiagram.PNG)
+
+
+
+
+
+*This project is part of the 2018 Embedded Software event at the University of applied sciences Bielefeld - campus Minden* 
+[IoTLab](https://www.iot-minden.de/)
+
+
 
