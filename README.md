@@ -1,6 +1,6 @@
 # intelligentes-schachbrett
 
-## What is this?
+## Overview
 
 The project "intelligentes-schachbrett" combines playing on a physical chessboard with modern engines.
 
@@ -63,7 +63,7 @@ The project consists of two parts:
 
 ### Sequence diagram
 
-The sequence diagram pictures the start of a new game and the first turn. To watch the whole documentation of the communication protocol [click here](Documentation/Definition of the communication protocol.md).
+The sequence diagram pictures the start of a new game and the first turn. To watch the whole documentation of the communication protocol [click here](https://github.com/IoT-Lab-Minden/intelligentes-schachbrett/blob/master/Documentation/Definition%20of%20the%20communication%20protocol.md).
 
 ![SequenceDiagram](Documentation/ServerDiagrams/SequenceDiagram.PNG)
 
