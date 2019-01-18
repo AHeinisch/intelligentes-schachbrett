@@ -1,26 +1,47 @@
 # intelligentes-schachbrett
 
+[TOC]
+
 ## What is this?
 
-The project "intelligentes-schachbrett" combines playing on a physicall chessbord with modern engines.
+The project "intelligentes-schachbrett" combines playing on a physical chessboard with modern engines.
 
-The Project consists of to parts:
+The project consists of two parts:
 
-- the actuall physicall chessboard witch recognises moves through hall sensors and sends them to the server
-- the server part witch evaluates and saves the played move, communicates with the engine and returns the evaluation and the move of the engine attached to it.
+- the actual physical chessboard which recognises moves through hall sensors and sends them to the server
+- the server part, which evaluates and saves the played move, communicates with the engine and returns the evaluation and the move of the engine attached to it
+
+## User manual
+
+### Server
+
+- The server must be set up on the IP address 192.168.2.1.
+
+- Start the server.
+- Type in the absolute path to the place, where the engine is stored. If you don't type in anything, the value of the constant 'path' of the class engineConstants will be used. The engine has to use the usi protocol.
+
+### Client
+
+- [Hardware Setup](#hardware)
+- Choose the game mode by pressing the AI or PvP button.
+- Place the figures on the start positions of a chess game.
+  - The fields where a figure has to be placed are illuminated.
+- Now you can start playing by moving the figures
+  - an LED shines where you lifted and put a figure
+  - if you do an illegal turn the shining LEDs show you how to reverse it
+- If you are playing against the engine, the shining LEDs show you which move the AI did after your move. You then have to do the move as shown.
 
 ## System architecture
 
 ![SystemArchitecture](Documentation/SystemArchitecture.png)
 
+## Requirements
+
+![SysML_1_4_Requirement_Diagram](Documentation/EmbeddedAnforderungsdiagramm/SysML_1_4_Requirement_Diagram.PNG)
+
+
+
 ## Server
-
-### Manual
-
-- start Server
-- type in the absolute path to the place where the engine in stored. If you don't type in anything the value of the constant path of the class engineConstants will be used. The engine has to use the usi protocoll
-- send a start command to the server
-  - all commands the server understands are described in the protocol documentation in the documentation folder.
 
 ### Javadoc
 
@@ -44,22 +65,39 @@ The Project consists of to parts:
 
 ### Sequence diagram
 
-The sequence diagram pictures the start of a new game and the first turn.
+The sequence diagram pictures the start of a new game and the first turn. To watch the whole documentation of the communication protocol [click here](Documentation/Definition of the communication protocol.md).
 
 ![SequenceDiagram](Documentation/ServerDiagrams/SequenceDiagram.PNG)
 
 
 
-*This project is part of the 2018 Embedded Software event at the University of applied sciences Bielefeld - campus Minden* 
-[IoTLab](https://www.iot-minden.de/)
+## Client
+
+### Doxygen
+
+[doxygen](https://iot-lab-minden.github.io/intelligentes-schachbrett/nucleo/doc/html/index.html)
+
+### Class diagram
+
+![MC](/Users/jendrikmuller/Documents/fh-Bielefeld/Semester5/Embedded/intelligentes-schachbrett/Documentation/EmbeddedAnforderungsdiagramm/MC.PNG)
+
+### Statemachine
+
+The given statemachine describes the progress of playing a chess game. The game.step-method which is the startingpoint of the statemachine gets started in the micrcontroller's main-method.
+
+![StateMachine](/Users/jendrikmuller/Documents/fh-Bielefeld/Semester5/Embedded/intelligentes-schachbrett/Documentation/EmbeddedAnforderungsdiagramm/StateMachine.PNG)
+
+#### Activity diagram
+
+The following activity diagram further describes the waitingserver-status of the statemachine.
+
+![Activity_Waitingserver](/Users/jendrikmuller/Documents/fh-Bielefeld/Semester5/Embedded/intelligentes-schachbrett/Documentation/EmbeddedAnforderungsdiagramm/Activity_Waitingserver.PNG)
 
 
 
 
 
-
-
-## Hardware Setup
+## <a name="hardware"> </a>Hardware Setup
 
 ### Building 
 
@@ -71,7 +109,7 @@ The TLE 4905L works with a Supply Voltage from 3.7V - 24V and has 3 pins which n
 2. GND
 3. Q
 
-The Sensor outputs a Digital Signal when a Magnetfield is present which has the right polarisation. Because the pins are quite small and not easy to connect with a normal Jumperwire so we recommend soldering either all Vs wires together and also all Ground wires and either solder a pin for  connecting to a Breadboard.
+The Sensor outputs a Digital Signal when a Magnetfield is present which has the right polarisation. Because the pins are quite small and not easy to connect with a normal Jumperwire so we recommend soldering either all Vs wires together and also all Ground wires and solder a pin for  connecting to a Breadboard.
 
 #### MCP23017
 
@@ -91,18 +129,11 @@ The MCP23017 works with a SupplyVoltage of 1.7V - 5.5V and has 28 pins. This IC 
 
 
 
-### Changing Settings in Code
-
-to create the TCP Connection with the Server there has to be made some changes to the Const.h. The constant Variables have to be modified to ensure creating a Connection with the correct Server.
-
-- IP Server : IPv4 Adress of the Server
-- Port Server : the Port on which the Server is Running
-
 ### Connecting the Microcontroller
 
-Connect the Microcontroller with the Network or Computer with the help of a Ethernet Cable. There is no need for a specific Cross-Over cable.
+Connect the microcontroller with the network or computer with the help of an ethernet cable. There is no need for a specific crossover cable.
 
-Should the Microcontroller not have been connected with Wires to the Hardware. Connect all Wires According to the Table below.
+Should the microcontroller not have been connected with wires to the hardware, connect all wires according to the table below.
 
 | Connector / Pin | Wire Connection    |
 | --------------- | ------------------ |
@@ -119,4 +150,11 @@ Should the Microcontroller not have been connected with Wires to the Hardware. C
 | CN7 / PB_8      | I2C Clock          |
 | CN7 / PB_9      | I2C Data           |
 
-After connecting all wires according to the table you can supply power to the Circuit.
+After connecting all wires according to the table you can supply power to the circuit.
+
+
+
+## Site notice
+
+*This project is part of the 2018 Embedded Software event at the FH Bielefeld University of applied sciences Bielefeld - campus Minden* 
+[IoTLab](https://www.iot-minden.de/)
