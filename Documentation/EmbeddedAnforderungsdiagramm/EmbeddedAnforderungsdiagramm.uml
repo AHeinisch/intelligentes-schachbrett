@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ModelElements="http://www.eclipse.org/papyrus/sysml/1.4/SysML/ModelElements" xmlns:Requirements="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/sysml/1.4/SysML/ModelElements http://www.eclipse.org/papyrus/sysml/1.4/SysML#//modelelements http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements http://www.eclipse.org/papyrus/sysml/1.4/SysML#//requirements">
+  <uml:Model xmi:id="_4yFxsNRCEeihRZNSpa5MBg" name="EmbeddedAnforderungsdiagramm" visibility="package">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_5DQaMNRCEeihRZNSpa5MBg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_5D6hgNRCEeihRZNSpa5MBg">
+      <importedPackage xmi:type="uml:Package" href="pathmap://SysML14_LIBRARIES/SysML-Standard-Library.uml#SysML.package_packagedElement_Libraries"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_fmyGYNRvEeihRZNSpa5MBg" name="Inteligentes Schachbrett">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_R0T_kNRwEeihRZNSpa5MBg" name="Spielmodus umschalten"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_UjCPoNRwEeihRZNSpa5MBg" name="Tracken der Züge"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_WUPHgNRwEeihRZNSpa5MBg" name="Anzeigen welcher Spieler am Zug ist"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_lrzucNRwEeihRZNSpa5MBg" name="Speichern der Züge"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_gpJF0NRwEeihRZNSpa5MBg" name="Visualisierung der Züge der Chess Engine"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_dV-r8NRwEeihRZNSpa5MBg" name="Automatische Uhr"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_JqNdMNR2EeihRZNSpa5MBg" name="Kommunikation mit Chess Engine"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_agP08NRwEeihRZNSpa5MBg" name="Fehlermeldung bei illegalen Zügen"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FsyswNRzEeihRZNSpa5MBg" name="Uhr einstellen"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Tm0iMNR0EeihRZNSpa5MBg" name="&lt;&lt;derive>>" client="_FsyswNRzEeihRZNSpa5MBg" supplier="_R0T_kNRwEeihRZNSpa5MBg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_wojWkNR1EeihRZNSpa5MBg" name="&lt;&lt;derive>>" client="_lrzucNRwEeihRZNSpa5MBg" supplier="_UjCPoNRwEeihRZNSpa5MBg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_ZlnJ8NR2EeihRZNSpa5MBg" name="&lt;&lt;derive>>" client="_gpJF0NRwEeihRZNSpa5MBg" supplier="_JqNdMNR2EeihRZNSpa5MBg"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zCel4NR2EeihRZNSpa5MBg" name="Ursprung der Figur anzeigen"/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_EI_a4NR3EeihRZNSpa5MBg" name="Schachspieler"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_JIVCsNR3EeihRZNSpa5MBg" name="&lt;&lt;interested>>, Weight 100" client="_EI_a4NR3EeihRZNSpa5MBg" supplier="_fmyGYNRvEeihRZNSpa5MBg"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pY5FINeaEeiew_rTJwmvtw" name="Figur umwandeln"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ej5moNecEeiew_rTJwmvtw" name="Zielfeld erkennen"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_4uE0gNecEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_pY5FINeaEeiew_rTJwmvtw" supplier="_4yFxsNRCEeihRZNSpa5MBg"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JELgQNedEeiew_rTJwmvtw" name="Ursprugsfeld erkennen"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_WQ6nUNedEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_ej5moNecEeiew_rTJwmvtw" supplier="_UjCPoNRwEeihRZNSpa5MBg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_eWyiQNedEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_JELgQNedEeiew_rTJwmvtw" supplier="_UjCPoNRwEeihRZNSpa5MBg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_uVnWcNedEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_zCel4NR2EeihRZNSpa5MBg" supplier="_4yFxsNRCEeihRZNSpa5MBg"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_t73SUNegEeiew_rTJwmvtw" name="Fehlerhafte Züge erkennen"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Mih5oNehEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_t73SUNegEeiew_rTJwmvtw" supplier="_UjCPoNRwEeihRZNSpa5MBg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_SXzq8NehEeiew_rTJwmvtw" name="&lt;&lt;derive>>" client="_agP08NRwEeihRZNSpa5MBg" supplier="_t73SUNegEeiew_rTJwmvtw"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5C1jcNRCEeihRZNSpa5MBg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5C_UcNRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5DE0ANRCEeihRZNSpa5MBg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5DE0AdRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//activities"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Activities"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5DKTkNRCEeihRZNSpa5MBg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5DKTkdRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//allocations"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Allocations"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5DK6oNRCEeihRZNSpa5MBg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5DK6odRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//blocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Blocks"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5DLhsNRCEeihRZNSpa5MBg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5DLhsdRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//constraintblocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ConstraintBlocks"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5DMIwNRCEeihRZNSpa5MBg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5DMIwdRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//deprecatedelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_DeprecatedElements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5DMv0NRCEeihRZNSpa5MBg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5DMv0dRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//modelelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ModelElements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5DNW4NRCEeihRZNSpa5MBg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5DNW4dRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//portsandflows"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Ports_u0026Flows"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5DN98NRCEeihRZNSpa5MBg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5DOlANRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Requirements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5DPMENRCEeihRZNSpa5MBg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5DPMEdRCEeihRZNSpa5MBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Requirements:Requirement xmi:id="_fnB-ANRvEeihRZNSpa5MBg" base_Class="_fmyGYNRvEeihRZNSpa5MBg" id="0" text="Das System soll eine Schnittstelle zwischen physischen Schachbrettern und modernen Technologien bieten"/>
+  <Requirements:Requirement xmi:id="_R0tBINRwEeihRZNSpa5MBg" base_Class="_R0T_kNRwEeihRZNSpa5MBg" id="1" text="Der Nutzer soll einstellen können, ob er gegen den Computer oder einen Menschen antreten möchte und in welchem Zeiltformat."/>
+  <Requirements:Requirement xmi:id="_UjN10NRwEeihRZNSpa5MBg" base_Class="_UjCPoNRwEeihRZNSpa5MBg" id="2" text="Das System soll erkennen können, von wo nach wo die Figuren bewegt werden."/>
+  <Requirements:Requirement xmi:id="_WUatsNRwEeihRZNSpa5MBg" base_Class="_WUPHgNRwEeihRZNSpa5MBg" id="3" text="Das System soll anzeigen können, ob schwarz oder weiß am Zug ist."/>
+  <Requirements:Requirement xmi:id="_agZl8NRwEeihRZNSpa5MBg" base_Class="_agP08NRwEeihRZNSpa5MBg" id="2.2.1" text="Fehlerhafte Züge sollen nicht akzepiert werden und der Nutzer soll auf den Fehler aufmeksam gemacht werden."/>
+  <Requirements:Requirement xmi:id="_dWK5MNRwEeihRZNSpa5MBg" base_Class="_dV-r8NRwEeihRZNSpa5MBg" id="5" text="Nach dem korrekten Setzen einer Figur soll die Zeit automatisch für den jeweils anderen Spieler laufen"/>
+  <Requirements:Requirement xmi:id="_gpQakNRwEeihRZNSpa5MBg" base_Class="_gpJF0NRwEeihRZNSpa5MBg" id="4.1" text="Die Züge der Chess Engine müssen dem Nutzer visualisiert werden können"/>
+  <Requirements:Requirement xmi:id="_lr_UoNRwEeihRZNSpa5MBg" base_Class="_lrzucNRwEeihRZNSpa5MBg" id="2.3" text="Die gespielten Züge sollen zur späteren Analyse auf einem Server gespeichert weden"/>
+  <Requirements:Requirement xmi:id="_Fs-S8NRzEeihRZNSpa5MBg" base_Class="_FsyswNRzEeihRZNSpa5MBg" id="1.1" text="Der Nutzer muss die Zeit, die den Spielern zur verfügung stehen soll, einstellen können"/>
+  <Requirements:Requirement xmi:id="_JqVZANR2EeihRZNSpa5MBg" base_Class="_JqNdMNR2EeihRZNSpa5MBg" id="4" text="Das System soll mit einer KI, die auf einem Server läuft, kommunizieren können."/>
+  <Requirements:Requirement xmi:id="_zCmhsNR2EeihRZNSpa5MBg" base_Class="_zCel4NR2EeihRZNSpa5MBg" id="2.1.1" text="Dem Nutzer soll mittels einer LED das Ursprungsfeld visualisiert werden."/>
+  <ModelElements:Stakeholder xmi:id="_EJLBENR3EeihRZNSpa5MBg" base_Classifier="_EI_a4NR3EeihRZNSpa5MBg"/>
+  <Requirements:Requirement xmi:id="_pZLZANeaEeiew_rTJwmvtw" base_Class="_pY5FINeaEeiew_rTJwmvtw" id="2.4.1" text="Wenn ein Bauer als Zielfeld die letzte Reihe des Feldes hat, soll er in eine andere Figur der selben Farbe umgewandelt werden können, die der Nutzer bestimmen kann."/>
+  <Requirements:Requirement xmi:id="_ekD-sNecEeiew_rTJwmvtw" base_Class="_ej5moNecEeiew_rTJwmvtw" id="2.4" text="Das System soll das Feld erkennen, auf dem eine hochgenommene Figur abgestellt wird"/>
+  <Requirements:Requirement xmi:id="_JEY7oNedEeiew_rTJwmvtw" base_Class="_JELgQNedEeiew_rTJwmvtw" id="2.1" text="Das System soll erkennen können, welche Figur vom Nutzer angehoben wird"/>
+  <Requirements:Requirement xmi:id="_t8CRcNegEeiew_rTJwmvtw" base_Class="_t73SUNegEeiew_rTJwmvtw" id="2.2" text="Das System soll fehlerhafte Spielzüge erkennen und nicht akzeptieren."/>
+</xmi:XMI>
