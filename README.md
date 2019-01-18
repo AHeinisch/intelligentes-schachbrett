@@ -77,19 +77,19 @@ The sequence diagram pictures the start of a new game and the first turn. To wat
 
 ### Class diagram
 
-![MC](/Users/jendrikmuller/Documents/fh-Bielefeld/Semester5/Embedded/intelligentes-schachbrett/Documentation/EmbeddedAnforderungsdiagramm/MC.PNG)
+![MC](Documentation/EmbeddedAnforderungsdiagramm/MC.PNG)
 
 ### Statemachine
 
 The given statemachine describes the progress of playing a chess game. The game.step-method which is the startingpoint of the statemachine gets started in the micrcontroller's main-method.
 
-![StateMachine](/Users/jendrikmuller/Documents/fh-Bielefeld/Semester5/Embedded/intelligentes-schachbrett/Documentation/EmbeddedAnforderungsdiagramm/StateMachine.PNG)
+![StateMachine](Documentation/EmbeddedAnforderungsdiagramm/StateMachine.PNG)
 
 #### Activity diagram
 
 The following activity diagram further describes the waitingserver-status of the statemachine.
 
-![Activity_Waitingserver](/Users/jendrikmuller/Documents/fh-Bielefeld/Semester5/Embedded/intelligentes-schachbrett/Documentation/EmbeddedAnforderungsdiagramm/Activity_Waitingserver.PNG)
+![Activity_Waitingserver](Documentation/EmbeddedAnforderungsdiagramm/Activity_Waitingserver.PNG)
 
 
 
