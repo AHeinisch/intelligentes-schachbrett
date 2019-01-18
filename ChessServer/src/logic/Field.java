@@ -12,7 +12,7 @@ public class Field {
   /**
    * Returns the figure on the field.
    * 
-   * @returnFigure figure on the field. If there is no figure this method will
+   * @return Figure figure on the field. If there is no figure this method will
    *               return null
    */
   public Figure getFigure() {
