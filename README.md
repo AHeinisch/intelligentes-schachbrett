@@ -28,7 +28,11 @@ The Project consists of to parts:
 
 ### Class diagrams
 
+#### Logic
+
 ![ManagerClassDiagram](Documentation/ServerDiagrams/ManagerClassDiagram.PNG)
+
+#### Manager
 
 ![LogicClassDiagram](Documentation/ServerDiagrams/LogicClassDiagram.PNG)
 
@@ -37,6 +41,12 @@ The Project consists of to parts:
 ![ActivityDiagram](Documentation/ServerDiagrams/ActivityDiagram.PNG)
 
 
+
+### Sequence diagram
+
+The sequence diagram pictures the start of a new game and the first turn.
+
+![SequenceDiagram](Documentation/ServerDiagrams/SequenceDiagram.PNG)
 
 
 
